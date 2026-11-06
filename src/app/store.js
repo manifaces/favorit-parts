@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-
-const initialState = {};
+import { partsReducer } from '@/modules';
 
 export const store = configureStore({
-  reducer: (state = initialState) => state
+  reducer: {
+    parts: partsReducer
+  }
 });
