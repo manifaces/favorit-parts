@@ -1,0 +1,57 @@
+{
+  "name": "favorit-parts-search",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "yarn@4.5.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "postinstall": "husky",
+    "eslint": "eslint . --max-warnings=0",
+    "stylelint": "stylelint \"src/**/*.{css,scss}\" --max-warnings=0",
+    "prettier": "prettier"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "2.14.0",
+    "clsx": "2.1.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-redux": "9.3.1",
+    "sanitize.css": "13.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@vitejs/plugin-react": "6.2.1",
+    "eslint": "9.39.5",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.5.7",
+    "globals": "17.14.0",
+    "husky": "9.1.7",
+    "lint-staged": "16.4.0",
+    "postcss": "8.5.32",
+    "prettier": "3.9.10",
+    "sass": "1.108.0",
+    "stylelint": "17.16.0",
+    "stylelint-config-standard-scss": "17.0.0",
+    "vite": "8.3.6",
+    "vite-plugin-svgr": "5.2.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,mjs}": [
+      "eslint --fix --max-warnings=0",
+      "prettier --write",
+      "eslint --max-warnings=0"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix --max-warnings=0",
+      "prettier --write",
+      "stylelint --max-warnings=0"
+    ],
+    "*.{json,md,html,yml,yaml}": "prettier --write"
+  }
+}

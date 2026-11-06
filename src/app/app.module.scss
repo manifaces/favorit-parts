@@ -1,0 +1,15 @@
+.app {
+  display: grid;
+  align-content: center;
+  gap: 16px;
+  width: min(100%, 960px);
+  min-height: 100svh;
+  margin-inline: auto;
+  padding: clamp(24px, 5vw, 64px);
+
+  h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+}
