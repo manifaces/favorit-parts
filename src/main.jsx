@@ -5,7 +5,6 @@ import { App, store } from '@/app';
 import { ErrorBoundary } from '@/ui';
 import './styles/base.css';
 import './styles/fonts.css';
-import './styles/global.scss';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

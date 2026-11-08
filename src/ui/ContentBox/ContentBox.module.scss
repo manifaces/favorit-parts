@@ -1,0 +1,17 @@
+.ContentBox {
+  --layout-content-max-width: 1616px;
+  --layout-horizontal-padding: 16px;
+
+  width: 100%;
+  max-width: calc(var(--layout-content-max-width) + var(--layout-horizontal-padding) * 2);
+  padding: 0 var(--layout-horizontal-padding);
+  margin: 0 auto;
+
+  @media (width >= 768px) {
+    --layout-horizontal-padding: 24px;
+  }
+
+  @media (width >= 1280px) {
+    --layout-horizontal-padding: 32px;
+  }
+}

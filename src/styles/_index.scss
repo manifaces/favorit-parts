@@ -1,2 +1,3 @@
-@forward 'colors' as color-*;
-@forward 'typography';
+@forward './colors' as color-*;
+@forward './typography' as font-*;
+@forward './shadows' as shadow-*;

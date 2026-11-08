@@ -19,7 +19,7 @@
 
 `src/main.jsx` — точка входа и подключение Redux Provider.
 
-`src/app/app.jsx` — корневой компонент приложения.
+`src/app/App.jsx` — корневой компонент приложения.
 
 `src/app/store.js` — настройка единого Redux-store.
 

@@ -1,0 +1,40 @@
+@use '@/styles' as ds;
+
+.Table {
+  width: 100%;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  outline: 1px solid ds.$color-border;
+  outline-offset: -1px;
+  color: ds.$color-text-primary;
+  background-color: ds.$color-background;
+}
+
+.TableRow {
+  background-color: ds.$color-background;
+}
+
+.TableCell {
+  @include ds.font-body-md;
+
+  padding: 10px 8px;
+  box-shadow: inset 0 -1px ds.$color-border;
+  text-align: left;
+  vertical-align: top;
+
+  &_header {
+    @include ds.font-body-sm-strong;
+
+    background-color: ds.$color-slate-50;
+  }
+
+  &_right {
+    text-align: right;
+  }
+
+  &_center {
+    text-align: center;
+  }
+}

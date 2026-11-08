@@ -1,0 +1,67 @@
+@use '@/styles' as ds;
+
+.IconButton {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  color: ds.$color-text-primary;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+
+  > svg {
+    flex: none;
+    width: 20px;
+    height: 20px;
+  }
+
+  &_sm {
+    width: 36px;
+    height: 36px;
+  }
+
+  &_neutral {
+    background-color: ds.$color-background;
+
+    &:hover:not(:disabled),
+    &:active:not(:disabled),
+    &:focus-visible {
+      background-color: ds.$color-background-muted;
+    }
+  }
+
+  &_soft {
+    background-color: ds.$color-slate-100;
+
+    &:hover:not(:disabled),
+    &:focus-visible {
+      background-color: ds.$color-slate-200;
+    }
+
+    &:active:not(:disabled) {
+      background-color: ds.$color-slate-300;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid ds.$color-slate-800;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    color: ds.$color-disabled-text;
+    background-color: ds.$color-disabled-background;
+    cursor: default;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}

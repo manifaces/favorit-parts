@@ -1,4 +1,8 @@
-.app {
+@use '@/styles' as ds;
+
+.App {
+  @include ds.font-body-md;
+
   display: grid;
   align-content: center;
   gap: 16px;
@@ -6,10 +10,12 @@
   min-height: 100svh;
   margin-inline: auto;
   padding: clamp(24px, 5vw, 64px);
+  color: ds.$color-text-primary;
+  background-color: ds.$color-background;
 
   h1 {
-    font-size: clamp(28px, 5vw, 44px);
-    line-height: 1.2;
+    @include ds.font-heading-lg;
+
     overflow-wrap: anywhere;
   }
 }

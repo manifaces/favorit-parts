@@ -1,0 +1,93 @@
+@use '@/styles' as ds;
+
+.Button {
+  @include ds.font-button;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 112px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+
+  > svg {
+    flex: none;
+    width: 20px;
+    height: 20px;
+  }
+
+  &_small {
+    min-width: 96px;
+    min-height: 36px;
+  }
+
+  &_primary {
+    color: ds.$color-background;
+    background-color: ds.$color-slate-600;
+
+    &:hover:not(:disabled),
+    &:focus-visible {
+      background-color: ds.$color-slate-700;
+    }
+
+    &:active:not(:disabled) {
+      background-color: ds.$color-slate-800;
+    }
+  }
+
+  &_outlined {
+    border-color: ds.$color-slate-400;
+    color: ds.$color-slate-700;
+    background-color: ds.$color-background;
+    line-height: 22px;
+
+    &:hover:not(:disabled),
+    &:focus-visible {
+      background-color: ds.$color-slate-50;
+    }
+
+    &:active:not(:disabled) {
+      background-color: ds.$color-slate-100;
+    }
+  }
+
+  &_tertiary {
+    color: ds.$color-text-primary;
+    background-color: transparent;
+    line-height: 22px;
+
+    &:hover:not(:disabled),
+    &:focus-visible {
+      background-color: ds.$color-background-muted;
+    }
+
+    &:active:not(:disabled) {
+      background-color: ds.$color-border;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid ds.$color-slate-800;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    border-color: transparent;
+    color: ds.$color-disabled-text;
+    background-color: ds.$color-disabled-background;
+    cursor: default;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
