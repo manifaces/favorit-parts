@@ -1,0 +1,36 @@
+@use '@/styles' as ds;
+
+.FeedbackState {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin-inline: auto;
+  text-align: center;
+
+  &__icon {
+    display: flex;
+    color: ds.$color-text-secondary;
+
+    > svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__copy {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__title {
+    @include ds.font-heading-md;
+  }
+
+  &__description {
+    @include ds.font-body-md;
+
+    color: ds.$color-text-secondary;
+  }
+}

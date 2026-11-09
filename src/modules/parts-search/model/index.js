@@ -1,4 +1,10 @@
-export { partsReducer, searchByArticle, loadPartsWithAnalogues, returnToManufacturers } from './parts.slice';
+export {
+  partsReducer,
+  searchByArticle,
+  loadPartsWithAnalogues,
+  resetSearch,
+  returnToManufacturers
+} from './parts.slice';
 export {
   selectArticle,
   selectSearchGoods,

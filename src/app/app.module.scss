@@ -3,19 +3,44 @@
 .App {
   @include ds.font-body-md;
 
-  display: grid;
-  align-content: center;
-  gap: 16px;
-  width: min(100%, 960px);
+  min-width: 320px;
   min-height: 100svh;
-  margin-inline: auto;
-  padding: clamp(24px, 5vw, 64px);
+  padding-block: 24px;
   color: ds.$color-text-primary;
   background-color: ds.$color-background;
 
-  h1 {
-    @include ds.font-heading-lg;
+  &__content {
+    display: grid;
+    gap: 24px;
+  }
 
-    overflow-wrap: anywhere;
+  &__header {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__brand {
+    @include ds.font-heading-sm;
+  }
+
+  &__title {
+    @include ds.font-heading-lg;
+  }
+
+  &__description {
+    max-width: 640px;
+    color: ds.$color-text-secondary;
+  }
+
+  @media (width >= 768px) {
+    padding-block: 32px;
+
+    &__content {
+      gap: 32px;
+    }
+  }
+
+  @media (width >= 1280px) {
+    padding-top: 40px;
   }
 }

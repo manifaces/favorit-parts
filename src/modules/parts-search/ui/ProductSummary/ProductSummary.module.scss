@@ -1,0 +1,67 @@
+@use '@/styles' as ds;
+
+.ProductSummary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border-radius: 12px 12px 0 0;
+  background-color: ds.$color-slate-50;
+
+  &__information {
+    display: grid;
+    flex: 1;
+    gap: 8px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  &__identity {
+    @include ds.font-body-md;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 8px;
+  }
+
+  &__brand {
+    @include ds.font-body-md-strong;
+  }
+
+  &__number,
+  &__price,
+  &__return,
+  &__label {
+    color: ds.$color-text-secondary;
+  }
+
+  &__name,
+  &__stock {
+    @include ds.font-body-md-strong;
+
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__return,
+  &__label {
+    @include ds.font-body-sm;
+  }
+
+  &__availability {
+    display: grid;
+    flex: none;
+    gap: 4px;
+    min-width: 88px;
+    max-width: 104px;
+    text-align: right;
+  }
+
+  @media (width < 768px) {
+    &__name,
+    &__stock {
+      @include ds.font-body-md-strong;
+    }
+  }
+}

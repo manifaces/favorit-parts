@@ -1,0 +1,27 @@
+@use '@/styles' as ds;
+
+.ResultsList {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+
+  &__products {
+    display: grid;
+    gap: 16px;
+    min-width: 0;
+  }
+
+  &__sort {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px 12px;
+    color: ds.$color-text-secondary;
+  }
+
+  &__sort-select {
+    width: 220px;
+    max-width: 100%;
+  }
+}

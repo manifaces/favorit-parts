@@ -1,0 +1,19 @@
+@use '@/styles' as ds;
+
+.ProductCard {
+  min-width: 0;
+  border: 1px solid ds.$color-border;
+  border-radius: 12px;
+  background-color: ds.$color-background;
+  box-shadow: ds.$shadow-card;
+
+  &__offers {
+    display: grid;
+    gap: 12px;
+    padding: 16px 24px 24px;
+  }
+
+  &__title {
+    @include ds.font-body-md-strong;
+  }
+}

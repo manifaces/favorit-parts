@@ -1,0 +1,21 @@
+@use '@/styles' as ds;
+
+.ManufacturerItem {
+  @include ds.font-body-md-strong;
+
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  min-height: 64px;
+  padding: 16px;
+  border-color: ds.$color-border;
+  color: ds.$color-text-primary;
+  text-align: left;
+  white-space: normal;
+
+  > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}

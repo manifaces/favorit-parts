@@ -60,6 +60,7 @@ const partsSlice = createSlice({
   name: 'parts',
   initialState,
   reducers: {
+    resetSearch: () => initialState,
     returnToManufacturers: (state) => {
       state.selectedBrand = null;
       state.goodsWithAnalogues = null;
@@ -120,5 +121,5 @@ const partsSlice = createSlice({
   }
 });
 
-export const { returnToManufacturers } = partsSlice.actions;
+export const { resetSearch, returnToManufacturers } = partsSlice.actions;
 export const partsReducer = partsSlice.reducer;

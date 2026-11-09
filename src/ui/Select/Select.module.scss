@@ -1,0 +1,130 @@
+@use '@/styles' as ds;
+
+.Select {
+  position: relative;
+  min-width: 0;
+
+  &__control {
+    @include ds.font-body-md;
+
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    padding: 0 40px 0 12px;
+    appearance: none;
+    border: 1px solid ds.$color-border;
+    border-radius: 8px;
+    color: ds.$color-text-primary;
+    background-color: ds.$color-background;
+    background-image: none;
+    cursor: pointer;
+    transition:
+      border-color 150ms ease,
+      color 150ms ease,
+      background-color 150ms ease;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible:not([data-pointer-focus='true']) {
+      outline: 2px solid ds.$color-slate-800;
+      outline-offset: 2px;
+    }
+
+    &[aria-invalid='true'] {
+      border-color: ds.$color-error;
+    }
+
+    &:disabled {
+      border-color: ds.$color-border;
+      color: ds.$color-disabled-text;
+      background-color: ds.$color-disabled-background;
+      cursor: default;
+    }
+  }
+
+  &:hover &__control:not(:disabled, [aria-invalid='true']),
+  &:focus-within &__control:not(:disabled, [aria-invalid='true']) {
+    border-color: ds.$color-slate-700;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    color: ds.$color-text-primary;
+    pointer-events: none;
+  }
+
+  &:has(select:disabled) &__icon {
+    color: ds.$color-disabled-text;
+  }
+
+  @supports (appearance: base-select) {
+    &__control,
+    &__control::picker(select) {
+      appearance: base-select;
+    }
+
+    &__control {
+      display: flex;
+      align-items: center;
+    }
+
+    &__control::picker-icon {
+      display: none;
+    }
+
+    &__control::picker(select) {
+      @include ds.font-body-md;
+
+      max-height: min(320px, 60vh);
+      margin-block: 6px;
+      padding: 4px;
+      border: 1px solid ds.$color-border;
+      border-radius: 8px;
+      color: ds.$color-text-primary;
+      background-color: ds.$color-background;
+      box-shadow: ds.$shadow-card;
+    }
+
+    &__control option {
+      display: flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover,
+      &:focus-visible {
+        outline: none;
+        background-color: ds.$color-slate-50;
+      }
+
+      &:checked {
+        color: ds.$color-slate-700;
+        background-color: ds.$color-slate-100;
+      }
+
+      &:disabled {
+        color: ds.$color-disabled-text;
+        cursor: default;
+      }
+
+      &::checkmark {
+        display: none;
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__control {
+      transition: none;
+    }
+  }
+}

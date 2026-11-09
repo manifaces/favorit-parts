@@ -1,0 +1,1 @@
+export { ResultsPagination } from './ResultsPagination';

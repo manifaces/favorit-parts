@@ -1,0 +1,1 @@
+export { ManufacturerItem } from './ManufacturerItem';

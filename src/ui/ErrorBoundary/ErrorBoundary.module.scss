@@ -1,0 +1,40 @@
+@use '@/styles' as ds;
+
+.ErrorBoundary {
+  @include ds.font-body-md;
+
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  padding: 24px 16px;
+  color: ds.$color-text-primary;
+  background-color: ds.$color-background;
+
+  &__content {
+    display: grid;
+    justify-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 560px;
+    text-align: center;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    color: ds.$color-error;
+  }
+
+  &__copy {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__title {
+    @include ds.font-heading-md;
+  }
+
+  &__description {
+    color: ds.$color-text-secondary;
+  }
+}

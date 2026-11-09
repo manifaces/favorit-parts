@@ -1,7 +1,9 @@
+export { PartsSearch } from './parts-search';
 export {
   partsReducer,
   searchByArticle,
   loadPartsWithAnalogues,
+  resetSearch,
   returnToManufacturers,
   selectArticle,
   selectSearchGoods,
@@ -15,4 +17,16 @@ export {
   selectAnaloguesError,
   selectIsSearchEmpty,
   selectIsAnaloguesEmpty
+} from './parts-search';
+export {
+  ManufacturerItem,
+  ManufacturerList,
+  OffersTable,
+  ProductCard,
+  ProductSummary,
+  ResultsHeader,
+  ResultsPagination,
+  SearchForm,
+  ViewSwitcher,
+  WarehouseOffers
 } from './parts-search';

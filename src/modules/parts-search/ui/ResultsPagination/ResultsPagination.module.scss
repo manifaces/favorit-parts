@@ -1,0 +1,33 @@
+@use '@/styles' as ds;
+
+.ResultsPagination {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 12px;
+
+  &__range {
+    @include ds.font-body-sm;
+
+    color: ds.$color-text-secondary;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__current {
+    @include ds.font-body-md-strong;
+  }
+
+  @media (width >= 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__controls {
+      gap: 12px;
+    }
+  }
+}

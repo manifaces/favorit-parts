@@ -1,0 +1,135 @@
+@use '@/styles' as ds;
+
+.WarehouseOffers {
+  min-width: 0;
+
+  &__table {
+    table-layout: fixed;
+    overflow: visible;
+    border-radius: 0;
+    outline: none;
+  }
+
+  &__warehouse {
+    width: 42.5%;
+    overflow-wrap: anywhere;
+  }
+
+  &__stock {
+    width: 15%;
+  }
+
+  &__shipment {
+    width: 22.5%;
+  }
+
+  &__price {
+    @include ds.font-body-md-strong;
+
+    width: 20%;
+    overflow-wrap: anywhere;
+  }
+
+  &__head th {
+    @include ds.font-body-sm-strong;
+
+    padding-block: 8px;
+    background-color: transparent;
+  }
+
+  &__prefix {
+    display: none;
+  }
+
+  &__return,
+  &__deadline {
+    @include ds.font-body-sm;
+
+    display: block;
+    margin-top: 4px;
+    color: ds.$color-text-secondary;
+  }
+
+  &__empty {
+    @include ds.font-body-md;
+
+    color: ds.$color-text-secondary;
+  }
+
+  &__toggle {
+    margin-top: 16px;
+    white-space: normal;
+  }
+
+  @media (width < 768px) {
+    &__table,
+    &__table tbody {
+      display: block;
+    }
+
+    &__head {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    &__row {
+      display: grid;
+      grid-template-columns: max-content minmax(0, 1fr);
+      gap: 6px 8px;
+      padding-block: 10px;
+      box-shadow: inset 0 -1px ds.$color-border;
+    }
+
+    &__warehouse,
+    &__stock,
+    &__shipment,
+    &__price {
+      width: auto;
+      padding: 0;
+      box-shadow: none;
+    }
+
+    &__warehouse {
+      grid-row: 1;
+      grid-column: 1 / -1;
+      padding-right: 88px;
+    }
+
+    &__price {
+      grid-row: 1;
+      grid-column: 2;
+      place-self: start end;
+      max-width: 80px;
+    }
+
+    &__stock,
+    &__shipment {
+      @include ds.font-body-sm;
+
+      grid-row: 2;
+      color: ds.$color-text-secondary;
+    }
+
+    &__stock {
+      grid-column: 1;
+      text-align: left;
+    }
+
+    &__shipment {
+      grid-column: 2;
+      text-align: right;
+    }
+
+    &__prefix {
+      display: inline;
+    }
+
+    &__toggle {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@use '@/styles' as ds;
+
+.PartsSearch {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+
+  &__manufacturers {
+    display: grid;
+    gap: 16px;
+    min-width: 0;
+  }
+
+  &__title {
+    @include ds.font-heading-md;
+  }
+
+  &__manufacturers-header {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  &__article {
+    color: ds.$color-text-secondary;
+    overflow-wrap: anywhere;
+  }
+
+  &__results {
+    display: grid;
+    gap: 24px;
+    min-width: 0;
+  }
+
+  &__state {
+    padding-block: 40px;
+  }
+
+  &__feedback {
+    max-width: 560px;
+  }
+
+  &__error-icon {
+    color: ds.$color-error;
+  }
+
+  @media (width >= 768px) {
+    gap: 32px;
+
+    &__state {
+      padding-block: 64px;
+    }
+  }
+}
