@@ -42,7 +42,7 @@ export const WarehouseOffers = ({ warehouses = [] }) => {
             const deadline = formatOrderDeadline(warehouse.shipmentDate);
 
             return (
-              <TableRow key={warehouse.id ?? index} className={s.WarehouseOffers__row}>
+              <TableRow key={index} className={s.WarehouseOffers__row}>
                 <TableCell className={s.WarehouseOffers__warehouse}>
                   <span className={s.WarehouseOffers__prefix}>Склад </span>
                   {warehouse.code || 'Не указан'}

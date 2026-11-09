@@ -1,5 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchPartsWithAnalogues, getPartsErrorMessage, searchParts } from '@/services';
+import {
+  DEFAULT_ERROR_MESSAGE,
+  fetchPartsWithAnalogues,
+  getPartsErrorMessage,
+  searchParts
+} from '@/services';
 
 export const searchByArticle = createAsyncThunk(
   'parts/searchByArticle',
@@ -94,7 +99,7 @@ const partsSlice = createSlice({
         if (state.searchRequestId !== meta.requestId) return;
 
         state.isSearching = false;
-        state.searchError = meta.aborted ? null : payload;
+        state.searchError = meta.aborted ? null : (payload ?? DEFAULT_ERROR_MESSAGE);
         state.searchRequestId = null;
       })
       .addCase(loadPartsWithAnalogues.pending, (state, { meta }) => {
@@ -115,7 +120,7 @@ const partsSlice = createSlice({
         if (state.analoguesRequestId !== meta.requestId) return;
 
         state.isLoadingAnalogues = false;
-        state.analoguesError = meta.aborted ? null : payload;
+        state.analoguesError = meta.aborted ? null : (payload ?? DEFAULT_ERROR_MESSAGE);
         state.analoguesRequestId = null;
       });
   }

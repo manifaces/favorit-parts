@@ -5,9 +5,11 @@ const priceFormatter = new Intl.NumberFormat('ru-RU', {
   maximumFractionDigits: 0
 });
 
-export const formatStock = (value) => (value == null ? '—' : `${stockFormatter.format(value)} шт.`);
+const isEmptyNumber = (value) => value == null || (typeof value === 'string' && value.trim() === '');
 
-export const formatPrice = (value) => (value == null ? '—' : priceFormatter.format(value));
+export const formatStock = (value) => (isEmptyNumber(value) ? '—' : `${stockFormatter.format(value)} шт.`);
+
+export const formatPrice = (value) => (isEmptyNumber(value) ? '—' : priceFormatter.format(value));
 
 export const formatShipmentDate = (value) => {
   if (!value) return 'Не указана';

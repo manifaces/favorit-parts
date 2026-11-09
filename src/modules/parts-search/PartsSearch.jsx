@@ -87,6 +87,7 @@ export const PartsSearch = () => {
     if (requests.current.offers?.arg === brand) return;
 
     requests.current.offers?.abort();
+    setSort(DEFAULT_SORT);
 
     const request = dispatch(loadPartsWithAnalogues(brand));
     requests.current.offers = request;

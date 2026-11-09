@@ -5,6 +5,7 @@ import s from './ProductSummary.module.scss';
 
 export const ProductSummary = ({ product, kind = 'matched', className }) => {
   const minPrice = getMinAvailablePrice(product);
+  const count = product.count == null || String(product.count).trim() === '' ? null : Number(product.count);
 
   return (
     <div className={clsx(s.ProductSummary, className)}>
@@ -24,9 +25,11 @@ export const ProductSummary = ({ product, kind = 'matched', className }) => {
 
       <div className={s.ProductSummary__availability}>
         <span className={s.ProductSummary__label}>
-          {product.count == null ? 'Наличие не указано' : product.count > 0 ? 'В наличии' : 'Нет в наличии'}
+          {count == null ? 'Наличие не указано' : count > 0 ? 'В наличии' : 'Нет в наличии'}
         </span>
-        <span className={s.ProductSummary__stock}>{formatStock(product.count)}</span>
+        {(count == null || count > 0) && (
+          <span className={s.ProductSummary__stock}>{formatStock(count)}</span>
+        )}
       </div>
     </div>
   );
